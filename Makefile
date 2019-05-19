@@ -1,12 +1,10 @@
 .PHONY:clean
-clean:
-	rm *.aux
-	rm *.log
-	rm *.lof
-	rm *.lot
-	rm *.bbl
-	rm *.blg
-	rm *.thm
-	rm *.toc
-	rm *.out
-	rm *.loa
+
+main.pdf: main.tex
+	xelatex main.tex
+	bibtex main.aux
+	xelatex main.tex
+	xelatex main.tex
+	ls | grep main | grep -v main.tex | grep -v main.pdf | xargs rm
+	rm missfont.log main.tex.bak
+	rm ./chapter/*.aux

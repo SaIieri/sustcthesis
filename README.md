@@ -12,11 +12,21 @@ Some tips:
 * After you have finished your thesis, click make.bat, you will get a pdf version.
 * .cls and .bst files are template files.
 
-# Authors
+## Usage
+
+Run following command to generate pdf file:
+
+```bash
+make
+```
+
+
+
+## Authors
 
 1. whzecomjm@SUSTC, 2014
 2. Spacebody@SUSTech, 2019
 3. liziwl@SUSTech, 2019
-# License
+## License
 
 **MIT**
