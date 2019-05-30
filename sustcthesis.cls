@@ -369,9 +369,8 @@
 \DeclareDocumentCommand{\makecover}{ O{17pt} O{17pt} }{\make@bookspine{#1}{#2}}
 
 \renewcommand\maketitle{
-%	\make@cntitle
-%   If you need a chinese title, please remove this "%" sign!
-	\make@entitle
+\make@entitle
+\make@cntitle %   If you need a chinese title, please remove this "%" sign!
 	\ifsustc@english
 		\ifx\sustc@othertitle\@empty
 			\relax
@@ -397,36 +396,42 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-  	\vspace*{0.5cm plus 0.5cm minus 1cm}
-      \includegraphics[width=10cm]{sustc_logo_text.png}
-    \vskip -0.5cm
+
+  \begin{tabular}{lr}分类号\underline{\hspace{2cm}}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad &编\ 号\underline{\hspace{2cm}}\\ 
+  U\ D\ C\underline{\hspace{2cm}}&密\ 级\quad$\Box$ Yes\quad$\Box$ No
+  \end{tabular}
+   \vskip 0.5cm
+      \includegraphics[scale=0.28]{SUSTech_Logo.pdf}
+  \vskip -2.0cm
     \bfseries\SUSTCHUGE\ifsustc@doctor
       {博士学位论文}
     \else\ifsustc@master
       {硕士学位论文}  
     \else
-      {学士学位论文}
-    \fi\fi
-    
-    \ifsustc@bachelor\vskip 1cm\relax\else\vskip 1.5cm\fi
-      \includegraphics[width=4.5cm]{sustc_logo_fig.png}
-    \ifsustc@bachelor\relax\else\vskip 0.5cm\fi %0.75cm
-      \renewcommand{\baselinestretch}{0.5}%Leading
-        \parbox[c]{11cm}%\begin{minipage}
-        {\center\bfseries\yihao\sustc@title}
-      %\end{minipage}
+      \xiaochu{本科生毕业设计（论文）}
+    \fi\fi\\
+    \renewcommand{\baselinestretch}{1}
+    \vskip 1.0cm  
+     \bfseries\erhao\textbf{题\ 目}: \sustc@title
   \end{center}
-  \vskip 1.0cm %0.6cm 0.7cm 2.3cm
+ \vskip 1.0cm%0.6cm 0.7cm 2.3cm
   \begin{center}
   {\sanhao
-  \ifsustc@bachelor\begin{tabular}{lc}%
+  \ifsustc@bachelor
+  \begin{tabular}{rc}%
+    \specialrule{0em}{0pt}{0pt}
 	  \bfseries{姓\hspace{2\ccwd}名：} & \sustc@underline[6cm]{\sustc@author}\\
-	  \bfseries{院\hspace{2\ccwd}系：} & \sustc@underline[6cm]{\sustc@depart}\\
-	  \bfseries{学\hspace{2\ccwd}号：} & \sustc@underline[6cm]{\sustc@studentid}\\
-	  \bfseries{导\hspace{2\ccwd}师：} & \sustc@underline[6cm]{\sustc@advisor}\\
-	  \ifx\sustc@coadvisor\@empty\else & \sustc@underline[6cm]{\sustc@coadvisor}\\\fi
-	  \bfseries{完成时间：} & \sustc@underline[6cm]{\sustc@submitdate}
-	\end{tabular}
+     \\[-1em]
+    \bfseries{学\hspace{2\ccwd}号：} & \sustc@underline[6cm]{\sustc@studentid}\\
+     \\[-1em]
+    \bfseries{系\hspace{2\ccwd}别：} & \sustc@underline[6cm]{\sustc@depart}\\
+     \\[-1em]
+    \bfseries{专\hspace{2\ccwd}业：} & \sustc@underline[6cm]{\sustc@major}\\
+     \\[-1em]
+	  \bfseries{指导老师：} & \sustc@underline[6cm]{\sustc@advisor}
+  \end{tabular}
+    \vskip 2.8cm
+      \sustc@submitdate
   \else	\begin{tabular}{lc}%
 	  \bfseries{作者姓名：} & \sustc@underline[6cm]{\sustc@author}\\
 	  \bfseries{学科专业：} & \sustc@underline[6cm]{\sustc@major}\\
@@ -464,16 +469,17 @@
 
     \vskip 1.0cm %1.25cm
       \includegraphics[scale=0.7]{SUSTech_Logo_en.pdf}
-    \vskip 1.0cm %2.4cm
+    \vskip 0.5cm %2.4cm
     \SUSTCHuge{\ttfamily\ifsustc@doctor
       {A Dissertation for Doctor's Degree}
     \else\ifsustc@master
       {A Dissertation for Master's Degree}
     \else
-      {A Dissertation for Bachelor's Degree}
+      \xiaochu{Undergraduate Thesis}
     \fi\fi}\\
     \renewcommand{\baselinestretch}{1}
-     \bfseries\erhao\textbf{Thesis Title}: \sustc@entitle
+    \vskip 2.0cm  
+    \bfseries\erhao\textbf{Thesis Title}: \sustc@entitle
   \end{center}
   \vskip 1.0cm %1.8cm 2cm 3.1cm
   \begin{center}
@@ -517,7 +523,7 @@
 \newcommand\make@othertitle{%
   \newgeometry{%
   top=2.5cm,
-  bottom=2.0cm,
+  bottom=2.5cm,
   left=3.0cm,
   right=2.5cm
   }

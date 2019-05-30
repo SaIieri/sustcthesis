@@ -88,7 +88,7 @@
 \setsansfont[BoldFont={Courier New Bold}]{Courier New}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置等宽字体，这里关联封面标题字体无法修改。
-\setmonofont[BoldFont={Arial:style=Bold}]{Arial}
+\setmonofont[BoldFont={Arial:style=Bold}]{Times New Roman}
 % 如想使用\texttt{}使用courier标记变量符号，请用以下命令代替
 % {\mono foo_bar}
 % 使用时大括号必须保留，否则影响后面字体
