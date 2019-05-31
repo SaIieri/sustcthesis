@@ -397,11 +397,13 @@
   \thispagestyle{empty}
   \begin{center}
 
-  \begin{tabular}{lr}分类号\underline{\hspace{2cm}}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad &编\ 号\underline{\hspace{2cm}}\\ 
-  U\ D\ C\underline{\hspace{2cm}}&密\ 级\quad$\Box$ Yes\quad$\Box$ No
+  \setlength\tabcolsep{0pt}
+  \begin{tabular}{llcr}
+  分类号&\underline{\hspace{2cm}}&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad&编\ 号\underline{\hspace{2cm}}\\
+  U\ D\ C &\underline{\hspace{2cm}}&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad&密\ 级\quad$\Box$ Yes\quad$\Box$ No
   \end{tabular}
    \vskip 0.5cm
-      \includegraphics[scale=0.28]{SUSTech_Logo.pdf}
+      \includegraphics[scale=0.9]{SUSTech_Logo.pdf}
   \vskip -2.0cm
     \bfseries\SUSTCHUGE\ifsustc@doctor
       {博士学位论文}
@@ -410,8 +412,8 @@
     \else
       \xiaochu{本科生毕业设计（论文）}
     \fi\fi\\
-    \renewcommand{\baselinestretch}{1}
-    \vskip 1.0cm  
+    \vskip 1.0cm
+    \renewcommand{\baselinestretch}{0.7}
      \bfseries\erhao\textbf{题\ 目}: \sustc@title
   \end{center}
  \vskip 1.0cm%0.6cm 0.7cm 2.3cm
